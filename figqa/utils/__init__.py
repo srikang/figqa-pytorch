@@ -51,6 +51,7 @@ def load_model(model_args=None, fname=None, return_args=False, ngpus=0):
                >1 - use multiple gpus (nn.DataParallel)
     '''
     from ..models import RelNet
+    from ..models import RelNetGroupAttention
     if model_args == fname:
         raise Exception('To load a model provide either model_args or the '
                         'path of a model checkpoint.')
@@ -58,7 +59,7 @@ def load_model(model_args=None, fname=None, return_args=False, ngpus=0):
         print('Loading model from {}'.format(fname))
         mdict = torch.load(fname)
         model_args = mdict['model_args']
-    rn = RelNet(model_args)
+    rn = RelNetGroupAttention(model_args) #RelNet(model_args)
     # Note: This does NOT maintain the DataParallel device configuration
     # from the source even if the target is DataParallel.
     if fname is not None:
