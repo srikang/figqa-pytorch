@@ -1,2 +1,3 @@
 from .relnet import RelNet
 from .rn_group_attention import RelNetGroupAttention
+from .rn_group_attention2 import RelNetGroupAttention2

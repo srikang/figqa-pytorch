@@ -52,6 +52,7 @@ def load_model(model_args=None, fname=None, return_args=False, ngpus=0):
     '''
     from ..models import RelNet
     from ..models import RelNetGroupAttention
+    from ..models import RelNetGroupAttention2
     if model_args == fname:
         raise Exception('To load a model provide either model_args or the '
                         'path of a model checkpoint.')
